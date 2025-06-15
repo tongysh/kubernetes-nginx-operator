@@ -1,4 +1,4 @@
-package com.tongysh.k8sredisoperator.model;
+package com.tongysh.k8snginxoperator.model;
 
 import io.fabric8.kubernetes.api.model.Namespaced;
 import io.fabric8.kubernetes.client.CustomResource;

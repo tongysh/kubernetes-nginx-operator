@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # 复制应用 JAR 包
-COPY ./k8s-redis-operator-0.0.1-SNAPSHOT.jar /app/app.jar
+COPY ./k8s-nginx-operator-0.0.1-SNAPSHOT.jar /app/app.jar
 
 # 暴露 HTTPS 端口
 EXPOSE 8080

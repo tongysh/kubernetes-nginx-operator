@@ -1,9 +1,9 @@
-package com.tongysh.k8sredisoperator.operator;
+package com.tongysh.k8snginxoperator.operator;
 
 import cn.hutool.json.JSONUtil;
 import cn.hutool.log.StaticLog;
-import com.tongysh.k8sredisoperator.model.Website;
-import com.tongysh.k8sredisoperator.model.WebsiteStatus;
+import com.tongysh.k8snginxoperator.model.Website;
+import com.tongysh.k8snginxoperator.model.WebsiteStatus;
 import io.fabric8.kubernetes.api.model.ObjectMeta;
 import io.fabric8.kubernetes.api.model.ObjectMetaBuilder;
 import io.fabric8.kubernetes.api.model.ServiceBuilder;

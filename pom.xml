@@ -12,11 +12,11 @@
 
 
     <groupId>com.tongysh</groupId>
-    <artifactId>k8s-redis-operator</artifactId>
+    <artifactId>k8s-nginx-operator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>k8s-redis-operator</name>
-    <description>k8s-redis-operator</description>
+    <name>k8s-nginx-operator</name>
+    <description>k8s-nginx-operator</description>
 
     <properties>
         <java.version>17</java.version>
