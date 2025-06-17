@@ -23,7 +23,7 @@ public class WebsiteOperator {
 
 
     @Autowired
-    private final KubernetesClient client;
+    private KubernetesClient client;
 
     @EventListener(ApplicationReadyEvent.class)
     public void startWatching() {

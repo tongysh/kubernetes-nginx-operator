@@ -1,0 +1,10 @@
+# pod挂载sa案例
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-all
+spec:
+  serviceAccountName: website-operator-sa
+  containers:
+    - name: nginx-all
+      image: bitnami/nginx

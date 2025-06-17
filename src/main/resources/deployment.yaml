@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: operator-nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: operator-nginx
+  template:
+    metadata:
+      labels:
+        app: operator-nginx
+    spec:
+      # 关键配置：指定ServiceAccount
+      serviceAccountName: website-operator-sa  # 必须已存在的ServiceAccount
+      containers:
+        - name: operator-nginx-container
+          image: operator-nginx-website:1.0.0
+          ports:
+            - containerPort: 8080

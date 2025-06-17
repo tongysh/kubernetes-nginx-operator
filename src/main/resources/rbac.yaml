@@ -1,0 +1,27 @@
+#rbac权限配置文件  挂载的角色是k8s集群内置的cluster-admin
+#sa对应的secret token也需要进行创建  用于集群中部署的operator应用可以访问api-server
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: website-operator-sa
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: website-operator-sa
+  annotations:
+    kubernetes.io/service-account.name: website-operator-sa  # 替换为你的SA名称
+type: kubernetes.io/service-account-token
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: website-operator-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: website-operator-sa
+    namespace: default  # 改为Operator实际部署的namespace
