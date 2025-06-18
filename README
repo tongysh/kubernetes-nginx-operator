@@ -1,1 +1,14 @@
 kubernetes operator开发案例
+
+1. 开发一个website类型的自定义资源，资源实例如下：
+    apiVersion: demo.example.com/v1alpha1
+    kind: Website
+    metadata:
+      name: tongysh-blog
+    spec:
+      image: nginx:alpine
+      replicas: 3
+      port: 80
+要求如下：
+在集群中当创建website资源实例之后（kubectl apply），会自动在同命名空间下创建一个名称为tongysh-blog（由metadata.name指定）的deployment和svc，容器端口是port中定义的端口，pod副本数是replicas定义的副本数，容器镜像是image定义的镜像名称
+在集群中当删除website资源实例之后（kubectl delete），会自动将关联的deployment和svc进行删除
