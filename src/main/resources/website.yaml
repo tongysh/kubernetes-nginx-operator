@@ -1,0 +1,9 @@
+# my-website.yaml
+apiVersion: demo.example.com/v1alpha1
+kind: Website
+metadata:
+  name: tongysh-blog
+spec:
+  image: nginx:alpine
+  replicas: 3
+  port: 80
